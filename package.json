@@ -1,12 +1,13 @@
 {
   "name": "ember-cli-autocomplete",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Ember addon with devbridge-jquery-autocomplete inside.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "autocomplete"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Alexander Lebedev",
   "directories": {
     "doc": "doc",
     "test": "tests"
