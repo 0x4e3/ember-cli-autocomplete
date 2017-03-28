@@ -1,4 +1,6 @@
 {
   "name": "ember-cli-autocomplete",
-  "dependencies": {}
+  "dependencies": {
+    "devbridge-autocomplete": "^1.3.0"
+  }
 }
