@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/0x4e3/ember-cli-autocomplete.svg?branch=master)](https://travis-ci.org/0x4e3/ember-cli-autocomplete)
+
 # ember-cli-autocomplete
 
 A [jquery-autocomplete](https://github.com/devbridge/jQuery-Autocomplete) autocomplete addon for Ember.
