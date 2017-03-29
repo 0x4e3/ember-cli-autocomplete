@@ -1,5 +1,5 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{input-autocomplete lookup=countries onSelect=(action 'onSelect')}}
+
+{{input-autocomplete minChars=5 serviceUrl=apiUrl onSelect=(action 'onSelect') transformResult=(action 'transformResponse')}}
 
 {{outlet}}

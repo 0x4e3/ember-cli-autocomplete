@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+const assign = Ember.assign || Ember.merge;
+
 /**
  * A mixin for attaching jquery-autocomplete to the component's element.
  * @see https://www.devbridge.com/sourcery/components/jquery-autocomplete/
@@ -13,9 +15,13 @@ export default Ember.Mixin.create({
   _initializeAutocomplete() {
     Ember.assert('jquery-autocomplete.js must be loaded', typeof Ember.$().autocomplete === 'function');
 
-    const options = this._options();
+    let options = this._options();
 
     const dataSourceConfigured = Ember.isPresent(options.get('serviceUrl')) || Ember.isPresent(options.get('lookup'));
+
+    assign(options, this.get('autocompleteOptions') || {});
+    // console.log(options);
+    // console.log(JSON.parse(JSON.stringify(options)));
 
     Ember.assert('serviceUrl or lookup attributes must be provided', dataSourceConfigured === true);
     this.$().autocomplete(options);
@@ -24,11 +30,11 @@ export default Ember.Mixin.create({
   _options() {
     let options = Ember.Object.create({
       // AJAX global settings
-      'type': this.get('type') || 'GET',
-      'dataType': this.get('dataType') || 'json',
-      'paramName': this.get('paramName') || 'q',
-      'deferRequestBy': this.get('deferRequestBy') || 0,
-      'ajaxSettings': this.get('ajaxSettings') || {},
+      type: this.get('requestType') || 'GET',
+      dataType: this.get('dataType') || 'json',
+      paramName: this.get('paramName') || 'q',
+      deferRequestBy: this.get('deferRequestBy') || 0,
+      ajaxSettings: this.get('ajaxSettings') || {},
 
       // Configuration settings
       onSearchStart: this.get('onSearchStart') || function() {},
