@@ -14,13 +14,11 @@ export default Ember.Controller.extend({
       console.log(suggestion);
     },
     transformResponse(response) {
-      let result = {
-        suggestions: Ember.$.each(response.items, function(item) {
-          return {value: item['full_name'], data: item['id']};
+      return {
+        suggestions: Ember.$.map(response.items, function(item) {
+          return {value: item.full_name, data: item.id};
         })
       };
-      console.log(result);
-      return result;
     }
   }
 });
