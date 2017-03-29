@@ -12,14 +12,18 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:0x4e3/ember-cli-autocomplete.git"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^5.1.7"
+    "ember-cli-babel": "^5.1.7",
+    "ember-cli-less": "1.5.3"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
